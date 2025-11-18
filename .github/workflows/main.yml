@@ -19,13 +19,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Debug Docker Compose availability
+      - name: Debug Docker Compose version
         run: docker compose version
 
       - name: Build & Run containers
         run: |
-          docker compose down || true
-          docker compose up -d --build
+          docker compose -f etodo/docker-compose.yml down || true
+          docker compose -f etodo/docker-compose.yml up -d --build
 
       - name: Show running containers
         run: docker ps
