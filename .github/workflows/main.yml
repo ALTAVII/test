@@ -19,6 +19,18 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Debug secrets presence
+        run: |
+          echo "MYSQL_DATABASE: ${#MYSQL_DATABASE}"
+          echo "MYSQL_USER: ${#MYSQL_USER}"
+          echo "MYSQL_PASSWORD: ${#MYSQL_PASSWORD}"
+          echo "MYSQL_HOST: ${#MYSQL_HOST}"
+
+      - name: Check Compose presence
+        run: |
+          ls -al .
+          ls -al ./docker-compose.yml || true
+
       - name: Build & Run containers
         run: |
           docker compose down || true
