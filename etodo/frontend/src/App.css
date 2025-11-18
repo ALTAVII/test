@@ -1,0 +1,114 @@
+/* Arrière-plan général minimaliste */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f6fa;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Conteneur central */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+}
+
+/* Boîte principale To-Do List */
+.login-box {
+  background-color: #ffffff;
+  padding: 35px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Titres */
+h1 {
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h2 {
+  color: #6c63ff;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Liste de tâches */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+li {
+  background: #f5f5f5;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: background 0.3s, transform 0.2s;
+}
+
+li:hover {
+  background: #eaeaff;
+  transform: translateX(2px);
+}
+
+li span {
+  font-size: 15px;
+  color: #333;
+}
+
+/* Boutons */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+/* Bouton "terminé" */
+.removeItem {
+  background: #6c63ff;
+  color: white;
+  padding: 5px 10px;
+}
+
+.removeItem:hover {
+  background: #5a54e6;
+}
+
+/* Bouton "ajouter" */
+#addBtn {
+  background: #6c63ff;
+  color: white;
+  padding: 10px 16px;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#addBtn:hover {
+  background: #5a54e6;
+}
+
+.addBtnWrapper {
+  text-align: center;
+}

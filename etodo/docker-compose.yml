@@ -1,0 +1,29 @@
+services:
+  backend:
+    build: ./backend
+    container_name: etodo-backend
+    restart: unless-stopped
+    environment:
+      - DB_NAME=${MYSQL_DATABASE}
+      - DB_HOST=${MYSQL_HOST}
+      - DB_USER=${MYSQL_USER}
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./backend/script/src:/app/src
+    command: ["node", "src/index.js"]
+
+  db:
+    image: mysql
+    container_name: etodo-db
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./e-todo.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  mysql-data:
