@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     env:
       MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
       MYSQL_USER: ${{ secrets.MYSQL_USER }}
@@ -19,10 +19,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Install Docker Compose v2
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker-compose-plugin
+      - name: Debug Docker Compose availability
+        run: docker compose version
 
       - name: Build & Run containers
         run: |
